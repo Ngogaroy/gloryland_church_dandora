@@ -1,0 +1,362 @@
+/* css/contact.css */
+
+/* Page Banner Section */
+.page-banner {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; /* Ensures overlay doesn't spill */
+    background-size: cover;
+    background-position: center;
+    /* IMPORTANT: Replace with a relevant image for your Contact Us page */
+    background-image: url('../assets/images/contact-banner.jpg'); /* Example path */
+}
+
+.page-banner.contact-banner {
+    /* Specific background for contact page if different from other banners */
+    /* background-image: url('../assets/images/another-contact-banner.jpg'); */
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.banner-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #fff; /* Ensure heading is white on dark overlay */
+    font-family: 'Lora', serif; /* Use your heading font as defined in global */
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* Contact Section (containing info and form) */
+.contact-section {
+    padding: 80px 0; /* Adjust padding as needed, uses .section-padding from global */
+    background-color: var(--background-color); /* From global/main.css */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Contact Info on left, Form on right */
+    gap: 60px; /* Space between the two columns */
+    align-items: flex-start; /* Align content to the top */
+}
+
+/* Specific left-aligned titles (used in contact-info and contact-form-container) */
+.section-title-left {
+    font-family: 'Lora', serif; /* Consistent heading font */
+    font-size: 2.2em;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    text-align: left; /* Override default centered section title from global */
+}
+
+.section-title-left::after {
+    /* Optional: Remove the default underline for left-aligned titles if not desired */
+    content: none;
+}
+
+.section-subtitle-left {
+    font-size: 1.1em;
+    color: var(--text-color-light);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Contact Details List */
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: flex-start; /* Align icon and text to top */
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.contact-details li:last-child {
+    margin-bottom: 0; /* No margin after the last item */
+}
+
+.contact-details li i {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-right: 20px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    padding-top: 5px; /* Adjust icon vertical alignment relative to text */
+}
+
+.contact-details li h5 {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+}
+
+.contact-details li p {
+    font-size: 1em;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.contact-details li p a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-details li p a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+    background-color: var(--card-background); /* From global/main.css */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium); /* From global/main.css */
+}
+
+.contact-form .form-group {
+    margin-bottom: 25px;
+}
+
+.contact-form label {
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: var(--heading-color);
+    font-weight: 600;
+    display: block; /* Ensure label is on its own line */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color); /* From global/main.css */
+    border-radius: 6px;
+    background-color: var(--input-background); /* From global/main.css */
+    color: var(--text-color); /* From global/main.css */
+    font-size: 1em;
+    box-sizing: border-box; /* Crucial for full width with padding */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form input[type="tel"]::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-color-light); /* From global/main.css */
+    opacity: 0.7; /* Make placeholder text slightly transparent */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color); /* From global/main.css */
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2); /* Light glow on focus */
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 150px; /* Taller textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form .btn-primary { /* Assuming .btn .btn-primary is a global button class */
+    width: auto; /* Allow button to size naturally */
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Ensure it respects padding/margin correctly */
+}
+
+.contact-form .btn-primary:hover {
+    background-color: var(--primary-dark-color);
+    transform: translateY(-2px);
+}
+
+/* Message display area for form submission feedback */
+.form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1em;
+    text-align: center;
+    display: none; /* Hidden by default, shown by JavaScript */
+}
+
+.form-message.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb;
+}
+
+/* Map Section */
+.map-section {
+    padding: 80px 0;
+    background-color: var(--background-color); /* Matches page background */
+    text-align: center;
+}
+
+.map-section .section-title {
+    margin-bottom: 40px; /* Standard section title margin */
+}
+
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: var(--card-background); /* Background if map fails to load */
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium); /* From global/main.css */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove iframe default border */
+}
+
+/* =======================================
+   Responsive Adjustments for Contact Page
+   ======================================= */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack columns vertically on tablets/mobiles */
+        gap: 40px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+
+    .section-title-left {
+        font-size: 2em;
+        text-align: center; /* Center these titles on mobile too */
+    }
+    .section-title-left::after {
+        /* Re-add underline for centered titles on mobile if desired */
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 15px auto 0; /* Center the underline */
+        border-radius: 2px;
+    }
+
+    .section-subtitle-left {
+        text-align: center; /* Center subtitle on mobile */
+        margin-bottom: 30px;
+    }
+
+    .contact-details li {
+        justify-content: center; /* Center details on mobile */
+        text-align: center;
+        flex-direction: column; /* Stack icon and text */
+        margin-bottom: 40px;
+    }
+    .contact-details li i {
+        margin-right: 0;
+        margin-bottom: 10px; /* Space between icon and text */
+        padding-top: 0;
+    }
+    .contact-details li div {
+        margin-top: 10px; /* Space between icon and text */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-banner {
+        height: 250px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.8em;
+    }
+
+    .banner-content p {
+        font-size: 1.1em;
+    }
+
+    .contact-section, .map-section {
+        padding: 60px 0;
+    }
+
+    .contact-form-container {
+        padding: 25px;
+    }
+
+    .contact-details li {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-banner {
+        height: 200px;
+    }
+
+    .banner-content h1 {
+        font-size: 2em;
+    }
+
+    .banner-content p {
+        font-size: 1em;
+    }
+
+    .contact-section, .map-section {
+        padding: 40px 0;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 762 65">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+        font-family: Poppins-Regular, Poppins;
+        font-size: 28px;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #ce3232;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-3" d="M762,65c0-20-410,0-410,0C151,65,102,58,0,0h0s762,0,762,0v65Z"/>
+      <text class="cls-1" transform="translate(361.08 40.91)"><tspan x="0" y="0">B</tspan></text>
+      <text class="cls-2" transform="translate(378.25 40.91) scale(.7)"><tspan x="0" y="0">LOG</tspan></text>
+      <text class="cls-1" transform="translate(225.15 40.91)"><tspan x="0" y="0">Events</tspan></text>
+      <text class="cls-1" transform="translate(463.15 40.91)"><tspan x="0" y="0">G</tspan></text>
+      <text class="cls-1" transform="translate(484.93 40.91) scale(.7)"><tspan x="0" y="0">IVING</tspan></text>
+    </g>
+  </g>
+</svg>

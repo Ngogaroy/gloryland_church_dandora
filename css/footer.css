@@ -1,0 +1,209 @@
+/* --- Footer (Existing, but adding modern styling) --- */
+.main-footer {
+    background-color: var(--dark-bg-color); /* Dark background for footer */
+    color: var(--dark-text-muted); /* Muted text color */
+    padding: 60px 0 20px;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
+}
+/* Dark Mode for Footer - it's already dark, so no specific body.dark-mode rule needed for bg/color */
+body.dark-mode .main-footer {
+    border-top-color: var(--dark-border); /* Adjust border color for consistency */
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about .logo.footer-logo a {
+    color: var(--color-white); /* White logo in dark footer */
+    font-size: 2rem; /* Make logo in footer prominent */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block; /* Ensure it takes its own line */
+}
+.footer-about .logo.footer-logo a span {
+    font-size: 0.5em; /* Smaller relative to parent */
+    font-weight: 500;
+    color: var(--dark-text-muted); /* Muted light text */
+    letter-spacing: 0.05em;
+    text-transform: none;
+}
+.footer-about p {
+    color: var(--dark-text-muted);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Larger social icons */
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+    color: var(--color-white);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+/* Dark Mode for Social Links Hover - Use dark mode primary accent */
+.social-links a:hover {
+    background-color: var(--dark-primary); /* Gold accent on hover */
+    transform: translateY(-5px) scale(1.05);
+    color: var(--color-white);
+}
+
+.main-footer h3 {
+    color: var(--color-white); /* White headings in footer */
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.main-footer .footer-links ul li {
+    margin-bottom: 12px;
+}
+.main-footer .footer-links a,
+.main-footer .footer-contact p {
+    color: var(--dark-text-muted); /* Muted light text */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+/* Dark Mode for Footer Links/Contact Hover - Use dark mode primary accent */
+.main-footer .footer-links a:hover {
+    color: var(--dark-primary); /* Gold accent on hover */
+    transform: translateX(8px);
+    display: inline-block; /* Required for transform */
+}
+.main-footer .footer-contact p i {
+    margin-right: 10px;
+    color: var(--color-secondary); /* Secondary color for icons */
+    font-size: 1.1rem;
+}
+/* Dark Mode for Footer Contact Icons - Use dark mode primary accent */
+.main-footer .footer-contact p i {
+    color: var(--dark-primary); /* Gold for icons */
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+    margin-top: 40px;
+    text-align: center;
+    color: var(--dark-text-muted);
+}
+/* Dark Mode for Footer Bottom Border */
+body.dark-mode .footer-bottom {
+    border-top-color: var(--dark-border); /* Consistent dark border */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-section {
+        height: 80vh;
+    }
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+        text-align: center;
+    }
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+        text-align: center; /* Center content in stacked columns */
+    }
+    .social-links {
+        justify-content: center; /* Center social icons */
+    }
+    .main-footer .footer-links ul {
+        padding: 0;
+    }
+    .main-footer .footer-links ul li {
+        text-align: center;
+    }
+    .main-footer .footer-contact p {
+        justify-content: center; /* Center contact info icons/text */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .hero-actions .btn {
+        width: 90%; /* Make buttons wider */
+        max-width: 300px;
+    }
+    .sermon-highlight-card .sermon-info {
+        padding: 25px;
+    }
+    .sermon-highlight-card .sermon-info h3 {
+        font-size: 1.8rem;
+    }
+    .about-card, .ministry-card, .event-card, .contact-info-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+    .sermon-highlight-card .sermon-info .btn-link {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+    }
+    .sermon-thumbnail .play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .main-footer .footer-about .logo.footer-logo a {
+        font-size: 1.8rem;
+    }
+}

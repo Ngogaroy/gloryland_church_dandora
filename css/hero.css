@@ -1,0 +1,166 @@
+/* css/hero.css */
+
+/* --- Hero Section (Overall Container for the Background Slideshow) --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex; /* To center content */
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Ensures layering */
+    /* Remove background-image/transition from here, as JS manages layers */
+}
+
+/* Overlay for the Hero Section (remains the same) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use your semi-transparent gradient */
+    background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+    z-index: 3; /* Place overlay above background layers but below content */
+    pointer-events: none; /* Ensure overlay doesn't block interactions with content */
+}
+
+/* This element will hold the dynamically loaded background image/video */
+/* We'll manage multiple of these and transition their opacity */
+.hero-background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Starts hidden */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade for 1.5 seconds */
+    z-index: 2; /* Below overlay, above other layers */
+}
+
+/* Class to make a layer active (visible) */
+.hero-background-layer.active {
+    opacity: 1;
+}
+
+/* Specific styling for the video element when used as a background */
+.hero-background-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover; /* Ensures video covers the area */
+    position: absolute; /* Position within .hero-background-layer */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering trick */
+    filter: brightness(0.7); /* Slightly darker for better text contrast */
+}
+
+
+/* --- Hero Content (Text and Buttons) - REMAINS THE SAME, just adding for completeness --- */
+.hero-content {
+    position: relative; /* Position content above overlay */
+    z-index: 4; /* Content above media, overlay, and other layers */
+    text-align: center;
+    color: var(--color-white); /* Ensure text is visible on dark background */
+    max-width: 900px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: var(--color-white);
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    opacity: 0.9;
+    line-height: 1.6;
+    color: var(--color-white);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- Hero Specific Button Styles (REMAINS THE SAME) --- */
+.hero-actions .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions .btn-primary:hover {
+    background-color: var(--color-background-muted);
+    border-color: var(--color-background-muted);
+    color: var(--color-primary);
+}
+
+.hero-actions .btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.hero-actions .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+/* --- Responsive Adjustments (REMAINS THE SAME) --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .hero-description {
+        font-size: 1.05rem;
+    }
+    .hero-content {
+        padding: 15px;
+    }
+    .hero-actions .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Global Utility: Prevents body scrolling when preloader is active */
+body.no-scroll {
+    overflow: hidden;
+}

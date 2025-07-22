@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 51 66.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #ce3232;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path class="cls-2" d="M51,9v.96c0,7.49-1.59,14.75-4.55,21.38-4.38,9.83-11.76,18.26-21.35,23.89l-17.44,10.26c-3.39,2-7.66-.45-7.66-4.38V0h42c4.97,0,9,4.03,9,9Z"/>
+    <g>
+      <path class="cls-1" d="M41.14,25.8c-.13,4.01-1.72,7.38-4.04,9.93H13.22c-2.3-2.75-3.43-6.46-3.36-10.86.46-4.38,1.79-7.84,3.98-10.39h23.2c2.57,2.95,4.09,6.92,4.09,11.32Z"/>
+      <path class="cls-1" d="M37.05,14.48H13.84c2.62-3.05,6.46-4.79,11.53-5.24.04,0,.09,0,.13-.01,4.66,0,8.73,2.01,11.54,5.25Z"/>
+      <path class="cls-1" d="M37.1,35.73c-3.12,3.42-7.56,5.34-11.6,5.25-.04,0-.09,0-.13,0-5.5-.27-9.57-2.15-12.15-5.24h23.88Z"/>
+      <image width="200" height="200" transform="translate(10.16 9.76) scale(.15)" xlink:href="../../../GLC-removebg-preview.png"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,262 @@
+/* css/header.css - REVISED FOR DARK MODE HEADER BACKGROUND */
+
+/* --- Main Header Styles --- */
+.main-header {
+    position: fixed; /* Fixed to the top */
+    top: 0;
+    left: 0; /* Adjusted by JS or main-content padding-left on desktop */
+    width: 100%; /* Full width */
+    height: var(--header-height); /* Desktop height */
+    background-color: var(--color-white); /* Solid white background for light mode */
+    box-shadow: var(--shadow-small); /* Subtle shadow for depth */
+    z-index: 900; /* Below sidebar (1000) but above content */
+    padding: 0 30px; /* Adjust horizontal padding for content inside */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, left 0.3s ease, width 0.3s ease;
+}
+
+/* Adjust header for desktop sidebar */
+@media (min-width: 993px) {
+    .main-header {
+        left: 80px; /* Shifts header to the right by sidebar width */
+        width: calc(100% - 80px); /* Occupy remaining width */
+    }
+}
+
+/* Dark Mode Header - NOW WITH DARK BACKGROUND */
+body.dark-mode .main-header {
+    background-color: var(--dark-nav-bg); /* Use the dark background for header in dark mode */
+    box-shadow: var(--shadow-medium-dark); /* Slightly stronger shadow in dark mode */
+}
+
+/* Header Container within main-header - this is what holds and flexes content */
+.main-header .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes left and right content apart */
+    width: 100%; /* Ensure it spans the full width of the header */
+    height: 100%; /* Ensure it takes full height for vertical alignment */
+    /* .container class already adds max-width and padding, so no need to repeat here */
+}
+
+/* Header Left Section (for logo) */
+.header-left {
+    display: flex; /* In case you add other elements here */
+    align-items: center;
+}
+
+/* Site Logo/Title */
+.logo a { /* Targeting the <a> inside the .logo div */
+    font-family: var(--font-heading); /* Poppins, as defined in global.css */
+    font-size: 1.5rem; /* Larger for prominence */
+    font-weight: 800; /* Extra bold for impact */
+    color: var(--color-primary); /* Primary red color for light mode */
+    text-decoration: none;
+    line-height: 1.1; /* Tighter line-height for a compact look */
+    letter-spacing: -0.03em; /* Slightly negative letter-spacing for modern tightness */
+    transition: color 0.3s ease;
+    text-transform: uppercase; /* Optional: Make 'Gloryland Church' uppercase for more impact */
+}
+
+.logo a span { /* Style for the second line of the logo: "Dandora Assembly" */
+    display: block; /* Ensures it's on a new line */
+    font-size: 0.55em; /* Significantly smaller relative to parent (2.2rem * 0.55 = ~1.2rem) */
+    font-weight: 500; /* Medium weight for readability at smaller size */
+    color: var(--color-text-muted); /* Muted gray for a subtle secondary look in light mode */
+    line-height: 1.2; /* Line height for the span itself */
+    letter-spacing: 0.05em; /* Slightly positive letter-spacing for readability at small size */
+    text-transform: none; /* Ensure it's not uppercase if parent is */
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: none; 
+}
+
+.logo a:hover span {
+    color: var(--color-secondary); /* Keep span color consistent on hover in light mode */
+}
+
+/* Dark Mode Logo - Ensure text is readable on the DARK header */
+body.dark-mode .logo a {
+    color: var(--color-white); /* White for the main logo text on dark background */
+}
+body.dark-mode .logo a span {
+    color: var(--dark-text-muted); /* Muted light color for the sub-text on dark background */
+}
+
+
+/* Header Right Section (for nav and toggle) */
+.header-right {
+    display: flex; /* Flex for navigation and toggle/button */
+    align-items: center;
+    gap: 25px; /* Space between nav and other elements */
+}
+
+
+/* --- Top Navigation (Desktop) --- */
+.top-nav { /* Renamed from .main-nav */
+    display: flex; /* Flexbox for horizontal links */
+    align-items: center;
+}
+
+.top-nav-list { /* Renamed from .main-nav ul */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px; /* Space between nav items */
+}
+
+.top-nav-list li {
+    /* No specific styling needed on li unless you want margins/padding */
+}
+
+.top-nav-list a { /* Renamed from .main-nav a */
+    color: var(--color-primary); /* Bold red text for light mode */
+    text-decoration: none;
+    font-weight: 600; /* Make text bolder */
+    font-size: 1.05rem;
+    padding: 5px 0; /* Adjust vertical padding */
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Prevent nav items from wrapping */
+}
+
+.top-nav-list a:hover {
+    color: var(--color-secondary); /* Hover color in light mode */
+}
+
+/* Active link indicator (bottom line) */
+.top-nav-list a.active::after { /* Renamed from .main-nav a.active::after */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position below the text */
+    width: 100%;
+    height: 3px; /* Thickness of the line */
+    background-color: var(--color-primary); /* Red active line in light mode */
+    transition: background-color 0.3s ease;
+}
+
+/* Dark Mode Top Navigation Links - Readable on DARK header */
+body.dark-mode .top-nav-list a {
+    color: var(--dark-text-color); /* Light blue-grey for general links in dark mode */
+}
+body.dark-mode .top-nav-list a:hover {
+    color: var(--dark-primary); /* Gold for hover effect in dark mode */
+}
+body.dark-mode .top-nav-list a.active {
+    color: var(--dark-primary); /* Gold for active link text color */
+}
+body.dark-mode .top-nav-list a.active::after {
+    background-color: var(--dark-primary); /* Gold for active line color in dark mode */
+}
+
+
+/* --- Mobile Toggle Button (Hidden on Desktop) --- */
+.sidebar-toggle {
+    /* Keep this visible on mobile, hide on desktop */
+    display: none; /* Hidden by default on desktop, shown on mobile via media query */
+    font-size: 1.8rem;
+    color: var(--color-primary); /* Red color for the toggle icon in light mode */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+.sidebar-toggle:hover {
+    color: var(--color-secondary); /* Hover color in light mode */
+}
+
+/* Dark Mode Mobile Toggle Button - Readable on DARK header */
+body.dark-mode .sidebar-toggle {
+    color: var(--dark-primary); /* Gold for the toggle icon in dark mode */
+}
+
+/* --- Header Action Button (e.g., "Give Towards") --- */
+/* Your HTML currently has "Give" as part of the regular top-nav-list.
+   If you want it to be a distinct rounded button like in your image,
+   you need to move it out of the <ul> and add the class "btn header-action-btn".
+   The CSS for it is below, assuming you make that HTML change.
+*/
+.header-action-btn {
+    display: inline-flex; /* Use inline-flex for button with icon */
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    padding: 10px 25px;
+    background-color: var(--color-primary); /* Main red color in light mode */
+    color: var(--color-white);
+    border-radius: 9999px; /* Fully rounded */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-small);
+    border: none; /* No border for solid button */
+    white-space: nowrap; /* Prevent text wrap */
+}
+
+.header-action-btn:hover {
+    background-color: var(--color-secondary); /* Brighter red/pink on hover in light mode */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Dark Mode Header Action Button - Readable on DARK header */
+body.dark-mode .header-action-btn {
+    background-color: var(--dark-primary); /* Gold for background in dark mode */
+    color: var(--color-white); /* Keep white text */
+}
+body.dark-mode .header-action-btn:hover {
+    background-color: var(--dark-accent); /* Light blue on hover in dark mode */
+}
+
+
+/* --- Mobile Responsiveness for Header --- */
+@media (max-width: 992px) {
+    .main-header {
+        height: var(--header-height-mobile); /* Mobile header height */
+        padding: 0 20px;
+        left: 0; /* Ensure it's at the very left on mobile */
+        width: 100%; /* Full width on mobile */
+    }
+
+    .header-container {
+        padding: 0; /* Remove horizontal padding from container on mobile */
+    }
+
+    .top-nav { /* Hide desktop nav on mobile */
+        display: none;
+    }
+
+    .sidebar-toggle { /* Show toggle button on mobile */
+        display: block;
+        margin-left: auto; /* Push toggle to the right */
+        /* If header-action-btn is also present, adjust gap in header-right */
+    }
+
+    .header-right {
+        gap: 15px; /* Adjust gap between elements on mobile */
+    }
+
+    /* Ensure header-action-btn is visible and styled on mobile if present */
+    .header-action-btn {
+        display: none; /* Hide button on mobile unless specifically desired */
+        /* If you want it visible on mobile, change to 'display: inline-flex;' */
+    }
+}
+
+/* Desktop specific display for elements */
+@media (min-width: 993px) {
+    .top-nav {
+        display: flex; /* Show desktop nav */
+    }
+    .header-action-btn {
+        display: inline-flex; /* Show button on desktop */
+    }
+    .sidebar-toggle {
+        display: none; /* Hide mobile toggle */
+    }
+}

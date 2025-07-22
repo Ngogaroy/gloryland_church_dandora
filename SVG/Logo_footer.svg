@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 339.07 288.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #707070;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #fff5d6;
+        font-family: Poppins-Bold, Poppins;
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="Logo_in_Footer" data-name="Logo in Footer">
+        <circle class="cls-1" cx="169.53" cy="95" r="95"/>
+        <g>
+          <path class="cls-2" d="M251.92,98.66c-.7,21.1-9.04,38.9-21.26,52.31h-125.82c-12.13-14.49-18.07-34.04-17.68-57.22,2.42-23.07,9.41-41.29,20.96-54.71h122.23c13.52,15.55,21.57,36.46,21.57,59.62Z"/>
+          <path class="cls-2" d="M230.35,39.04h-122.23c13.79-16.05,34.04-25.23,60.73-27.6.23-.01.47-.04.7-.06,24.57,0,45.97,10.6,60.8,27.66Z"/>
+          <path class="cls-2" d="M230.66,150.96c-16.44,18.03-39.84,28.11-61.11,27.65-.23-.01-.47-.01-.7-.04-28.99-1.43-50.4-11.32-64.01-27.6h125.82Z"/>
+          <image width="200" height="200" transform="translate(88.74 14.2) scale(.81)" xlink:href="../../../GLC-removebg-preview.png"/>
+        </g>
+      </g>
+      <text class="cls-3" transform="translate(0 231.18)"><tspan x="0" y="0">GLORYLAND CHURCH</tspan><tspan x="87.65" y="38.4">DANDORA</tspan></text>
+    </g>
+  </g>
+</svg>

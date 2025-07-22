@@ -1,0 +1,308 @@
+/* css/give.css */
+
+/* Page Banner Section - Give Specific */
+.page-banner.give-banner {
+    background-image: url('../assets/images/give-banner.jpg'); /* Replace with your giving banner image */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner.give-banner .banner-overlay {
+    background-color: rgba(0, 0, 0, 0.55); /* Darker overlay for strong contrast */
+}
+
+.page-banner.give-banner .banner-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Lora', serif;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.page-banner.give-banner .banner-content p {
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: #e0e0e0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Give Intro Section */
+.give-intro {
+    background-color: var(--background-color);
+}
+
+.give-intro .section-title {
+    margin-bottom: 20px;
+}
+
+.give-intro .section-subtitle {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Giving Methods Section */
+.giving-methods {
+    background-color: var(--light-section-background); /* Or just var(--background-color) if no specific light section */
+}
+
+.giving-methods .section-title {
+    margin-bottom: 40px;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid for methods */
+    gap: 40px; /* Space between cards */
+}
+
+.method-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content apart, useful for button at bottom */
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.method-card .card-icon {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.method-card h4 {
+    font-size: 1.8em;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: 'Lora', serif;
+}
+
+.method-card p {
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows text to take available space */
+}
+
+.method-card .mpesa-details,
+.method-card .bank-details {
+    background-color: var(--background-color); /* Slightly different background for details */
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.method-card .mpesa-details p,
+.method-card .bank-details p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.method-card .mpesa-details p:last-child,
+.method-card .bank-details p:last-child {
+    margin-bottom: 0;
+}
+
+.method-card .mpesa-details .highlight,
+.method-card .bank-details .highlight {
+    font-weight: 700;
+    color: var(--primary-color); /* Highlight important numbers/names */
+    word-break: break-all; /* Prevents long numbers from overflowing */
+}
+
+.method-card .mpesa-details .small-text {
+    font-size: 0.85em;
+    color: var(--text-color-light);
+    margin-top: 10px;
+}
+
+/* Specific button styling for these cards */
+.method-card .btn-small {
+    margin-top: auto; /* Pushes button to bottom of card */
+}
+
+
+/* Questions CTA Section */
+.questions-cta {
+    background-color: var(--primary-color); /* Strong background color */
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+    position: relative;
+    /* Optional: Add a background image for this section with an overlay if needed */
+    /* background-image: url('../assets/images/cta-questions.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* If using image, add an overlay like:
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-color: rgba(var(--primary-color-rgb), 0.85);
+        z-index: 1;
+    } */
+}
+
+.questions-cta .section-title {
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.questions-cta .section-title::after {
+    background-color: rgba(255, 255, 255, 0.5); /* White underline */
+}
+
+.questions-cta .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.questions-cta .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--button-text-color);
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.questions-cta .btn-secondary:hover {
+    background-color: var(--secondary-dark-color);
+    border-color: var(--secondary-dark-color);
+}
+
+
+/* =======================================
+   Responsive Adjustments for Give Page
+   ======================================= */
+@media (max-width: 992px) {
+    .page-banner.give-banner {
+        height: 300px;
+    }
+
+    .page-banner.give-banner .banner-content h1 {
+        font-size: 3em;
+    }
+
+    .page-banner.give-banner .banner-content p {
+        font-size: 1.1em;
+    }
+
+    .method-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .method-card {
+        padding: 25px;
+    }
+
+    .method-card h4 {
+        font-size: 1.6em;
+    }
+
+    .method-card .card-icon {
+        font-size: 3em;
+    }
+
+    .questions-cta {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-banner.give-banner {
+        height: 250px;
+    }
+
+    .page-banner.give-banner .banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .page-banner.give-banner .banner-content p {
+        font-size: 1em;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        max-width: 400px; /* Constrain width of single column */
+        margin: 0 auto; /* Center the column */
+    }
+
+    .method-card {
+        padding: 20px;
+    }
+
+    .method-card h4 {
+        font-size: 1.4em;
+    }
+
+    .method-card .card-icon {
+        font-size: 2.8em;
+    }
+
+    .give-intro, .giving-methods, .questions-cta {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-banner.give-banner {
+        height: 200px;
+    }
+
+    .page-banner.give-banner .banner-content h1 {
+        font-size: 2em;
+    }
+
+    .page-banner.give-banner .banner-content p {
+        font-size: 0.9em;
+    }
+
+    .method-card {
+        padding: 15px;
+    }
+
+    .method-card h4 {
+        font-size: 1.3em;
+    }
+
+    .method-card .card-icon {
+        font-size: 2.5em;
+    }
+
+    .give-intro, .giving-methods, .questions-cta {
+        padding: 40px 0;
+    }
+}

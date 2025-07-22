@@ -1,0 +1,864 @@
+/* css/homepage.css - REVISED FOR DARK MODE CONTRAST AND CONSISTENCY */
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 90vh; /* Responsive height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white); /* Default text color on image */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Overlay for text readability */
+    /* Dynamically added in HTML: style="background-image: url('img/image_0c8763.jpg');" */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--hero-gradient-start-transparent) 0%, var(--hero-gradient-end-transparent) 100%);
+    z-index: 1;
+}
+
+/* Dark Mode for Hero Overlay - using existing dark RGBA values */
+body.dark-mode .hero-section::before {
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.8) 0%, rgba(45, 55, 72, 0.8) 100%);
+}
+
+.hero-content {
+    z-index: 2; /* Ensure content is above overlay */
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white); /* Keep white text for contrast on dark image/overlay */
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4.8rem; /* Larger, more impactful heading */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    color: var(--color-white); /* Keep white text for contrast on dark image/overlay */
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    opacity: 0.9;
+    line-height: 1.6;
+    color: var(--color-white); /* Keep white text for contrast on dark image/overlay */
+}
+
+/* Dark Mode for Hero Text - ensures they stay white on the dark overlay */
+body.dark-mode .hero-subtitle,
+body.dark-mode .hero-title,
+body.dark-mode .hero-description {
+    color: var(--color-white); /* Absolutely vital for readability on dark overlay */
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.hero-actions .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+    padding: 15px 35px; /* Larger buttons */
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions .btn-primary:hover {
+    background-color: var(--color-background-muted); /* Light gray on hover */
+    border-color: var(--color-background-muted);
+    color: var(--color-primary);
+}
+
+/* Dark Mode for Hero Primary Button */
+body.dark-mode .hero-actions .btn-primary {
+    background-color: var(--dark-primary); /* Gold background for dark mode primary */
+    color: var(--color-white); /* White text */
+    border-color: var(--dark-primary);
+}
+body.dark-mode .hero-actions .btn-primary:hover {
+    background-color: var(--dark-accent); /* Light blue accent on hover */
+    border-color: var(--dark-accent);
+    color: var(--color-white);
+}
+
+.hero-actions .btn-secondary {
+    background-color: transparent;
+    color: var(--color-white); /* White text for outline button */
+    border: 2px solid var(--color-white); /* White border for outline button */
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: none; /* No shadow by default */
+}
+
+.hero-actions .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Subtle white background on hover */
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+/* Dark Mode for Hero Secondary Button - consistent white outline */
+body.dark-mode .hero-actions .btn-secondary {
+    color: var(--color-white); /* Keep white text */
+    border: 2px solid var(--color-white); /* Keep white border */
+}
+body.dark-mode .hero-actions .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Subtle white background on hover */
+    color: var(--color-white); /* Keep white text */
+}
+
+
+/* --- About Section --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.about-card {
+    background-color: var(--color-card-bg-light);
+    padding: 35px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-small);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.about-card i {
+    font-size: 3.5rem; /* Larger icon */
+    color: var(--color-primary);
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+/* Dark Mode for About Card Icon - Use dark mode primary accent */
+body.dark-mode .about-card i {
+    color: var(--dark-primary); /* Gold for icons in dark mode */
+}
+
+.about-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* Dark Mode for About Card Text */
+body.dark-mode .about-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--shadow-medium-dark);
+}
+body.dark-mode .about-card h3 {
+    color: var(--dark-text-color);
+}
+body.dark-mode .about-card p {
+    color: var(--dark-text-muted);
+}
+
+
+/* --- Latest Sermon Section --- */
+.sermon-highlight-card {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    background-color: var(--color-card-bg-light);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    max-width: 1000px; /* Wider card for main sermon */
+    margin: 0 auto; /* Center the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .sermon-highlight-card {
+        flex-direction: row; /* Side-by-side on desktop */
+        text-align: left;
+    }
+}
+
+.sermon-highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-large);
+}
+
+.sermon-thumbnail {
+    position: relative;
+    flex-basis: 55%; /* Image takes slightly more space */
+    min-height: 300px; /* Minimum height for image */
+    background-color: var(--color-background-muted);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sermon-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sermon-thumbnail .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(var(--color-primary-rgb, 142, 21, 21), 0.8); /* Semi-transparent primary */
+    color: var(--color-white);
+    border: 3px solid var(--color-white);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark Mode for Sermon Play Button - use dark mode accent for consistency */
+body.dark-mode .sermon-thumbnail .play-button {
+    background-color: rgba(var(--dark-accent-rgb), 0.8); /* Use dark accent for play button */
+    border-color: var(--dark-text-color); /* Lighter border on dark */
+}
+.section-title, .section-subtitle {
+    color: black;
+}
+.sermon-thumbnail .play-button:hover {
+    background-color: var(--color-secondary); /* Accent on hover */
+    transform: translate(-50%, -50%) scale(1.1);
+    border-color: var(--color-accent); /* A different accent on hover */
+}
+/* Dark Mode for Sermon Play Button Hover */
+body.dark-mode .sermon-thumbnail .play-button:hover {
+    background-color: var(--color-accent); /* Keep the accent color from light mode for hover */
+    border-color: var(--dark-text-color);
+}
+
+
+.sermon-info {
+    flex-basis: 45%; /* Info takes remaining space */
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* Center text on mobile */
+}
+@media (min-width: 768px) {
+    .sermon-info {
+        text-align: left; /* Align text left on desktop */
+    }
+}
+
+
+.sermon-info h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.sermon-info .sermon-meta {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.sermon-info .sermon-excerpt {
+    margin-bottom: 30px;
+    line-height: 1.7;
+    color: var(--color-text-dark);
+}
+.sermon-info .btn-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px; /* Space between links on mobile */
+}
+@media (min-width: 768px) {
+    .sermon-info .btn-link {
+        margin-bottom: 0; /* Remove space on desktop */
+    }
+}
+
+/* Dark Mode for Sermon Card Text */
+body.dark-mode .sermon-highlight-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--shadow-medium-dark);
+}
+body.dark-mode .sermon-info h3 {
+    color: var(--dark-text-color);
+}
+body.dark-mode .sermon-info .sermon-meta,
+body.dark-mode .sermon-info .sermon-excerpt {
+    color: var(--dark-text-muted);
+}
+
+
+/* --- Ministries Section --- */
+.ministries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.ministry-card {
+    background-color: var(--color-card-bg-light);
+    padding: 30px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-small);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.ministry-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.ministry-card i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Dark Mode for Ministry Card Icon - Use dark mode primary accent */
+body.dark-mode .ministry-card i {
+    color: var(--dark-primary); /* Gold for icons in dark mode */
+}
+
+.ministry-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
+.ministry-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Dark Mode for Ministry Card Text */
+body.dark-mode .ministry-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--shadow-medium-dark);
+}
+body.dark-mode .ministry-card h4 {
+    color: var(--dark-text-color);
+}
+body.dark-mode .ministry-card p {
+    color: var(--dark-text-muted);
+}
+
+
+/* --- Events Section --- */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.event-card {
+    background-color: var(--color-card-bg-light);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Dark Mode for Event Card */
+body.dark-mode .event-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--shadow-medium-dark);
+}
+
+.event-card img {
+    width: 100%;
+    height: 220px; /* Consistent height for event images */
+    object-fit: cover;
+    display: block;
+}
+
+.event-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Ensure text is left-aligned within card */
+}
+
+.event-info h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+/* Dark Mode for Event Card Heading */
+body.dark-mode .event-info h4 {
+    color: var(--dark-text-color);
+}
+
+.event-info p {
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Dark Mode for Event Card Paragraph */
+body.dark-mode .event-info p {
+    color: var(--dark-text-muted);
+}
+
+.event-info p i {
+    color: var(--color-secondary); /* Accent color for icons */
+}
+/* Dark Mode for Event Card Icon */
+body.dark-mode .event-info p i {
+    color: var(--dark-primary); /* Gold for icons in dark mode */
+}
+
+.event-info .event-description {
+    color: var(--color-text-muted);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+/* Dark Mode for Event Card Description */
+body.dark-mode .event-info .event-description {
+    color: var(--dark-text-muted);
+}
+
+.event-info .btn-link {
+    margin-top: auto;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* --- Call to Action / Giving Section --- */
+.call-to-action-section {
+    padding: 90px 0;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark Mode for CTA Section Background */
+body.dark-mode .call-to-action-section {
+    background-color: var(--dark-bg-muted); /* Dark but distinct background */
+}
+
+.call-to-action-section .section-title {
+    color: var(--color-white);
+    font-size: 3rem; /* Larger CTA title */
+}
+/* Dark Mode for CTA Section Title */
+body.dark-mode .call-to-action-section .section-title {
+    color: var(--dark-text-color); /* Light text on dark background */
+}
+
+.call-to-action-section .lead-text {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+/* Dark Mode for CTA Section Lead Text */
+body.dark-mode .call-to-action-section .lead-text {
+    color: var(--dark-text-muted); /* Muted light text on dark background */
+}
+
+.call-to-action-section .btn-tertiary { /* A new button style for strong contrast */
+    background-color: var(--color-accent); /* Use accent color (light blue) */
+    color: var(--color-black); /* Crucial: Use black text for better contrast on light accent background */
+    border: 2px solid var(--color-accent);
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action-section .btn-tertiary:hover {
+    background-color: var(--color-secondary); /* Transition to secondary on hover (red/pink) */
+    color: var(--color-white); /* White text on darker hover background */
+    border-color: var(--color-secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode for Call to Action Button */
+body.dark-mode .call-to-action-section .btn-tertiary {
+    background-color: var(--color-accent); /* Light blue accent background */
+    color: var(--color-black); /* Crucial: Dark text on light accent background in dark mode */
+    border-color: var(--color-accent);
+}
+body.dark-mode .call-to-action-section .btn-tertiary:hover {
+    background-color: var(--color-secondary); /* Darker red/pink on hover */
+    color: var(--color-white); /* White text on dark hover background */
+    border-color: var(--color-secondary);
+}
+
+
+/* --- Contact/Visit Us Section --- */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 50px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+@media (min-width: 992px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr 1.2fr; /* Info block on left, map on right, map slightly larger */
+    }
+}
+
+.visit-us-block {
+    text-align: center; /* Center on mobile */
+}
+
+@media (min-width: 992px) {
+    .visit-us-block {
+        text-align: left; /* Align left on desktop */
+    }
+}
+
+.visit-us-block .section-title,
+.visit-us-block .section-subtitle {
+    text-align: inherit; /* Inherit from parent block */
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start; /* Align text to top if icon is taller */
+    gap: 15px;
+    text-align: left; /* Ensure text is left-aligned for lists */
+}
+/* Dark Mode for Contact Details Paragraph */
+body.dark-mode .contact-details p {
+    color: var(--dark-text-muted);
+}
+
+.contact-details p i {
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    padding-top: 3px; /* Align icon better with text */
+    font-size: 1.3rem; /* Slightly larger icons */
+    color: var(--color-primary);
+}
+/* Dark Mode for Contact Details Icon - Use dark mode primary accent */
+body.dark-mode .contact-details p i {
+    color: var(--dark-primary); /* Gold for icons in dark mode */
+}
+
+.map-placeholder {
+    background-color: var(--color-background-muted);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    height: 450px; /* Consistent height for map */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--color-border);
+}
+/* Dark Mode for Map Placeholder */
+body.dark-mode .map-placeholder {
+    background-color: var(--dark-card-bg); /* Dark background for map container */
+    box-shadow: var(--shadow-medium-dark);
+    border-color: var(--dark-border); /* Use dark border variable */
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+/* --- Footer (Existing, but adding modern styling) --- */
+.main-footer {
+    background-color: var(--dark-bg-color); /* Dark background for footer */
+    color: var(--dark-text-muted); /* Muted text color */
+    padding: 60px 0 20px;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
+}
+/* Dark Mode for Footer - it's already dark, so no specific body.dark-mode rule needed for bg/color */
+body.dark-mode .main-footer {
+    border-top-color: var(--dark-border); /* Adjust border color for consistency */
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about .logo.footer-logo a {
+    color: var(--color-white); /* White logo in dark footer */
+    font-size: 2rem; /* Make logo in footer prominent */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block; /* Ensure it takes its own line */
+}
+.footer-about .logo.footer-logo a span {
+    font-size: 0.5em; /* Smaller relative to parent */
+    font-weight: 500;
+    color: var(--dark-text-muted); /* Muted light text */
+    letter-spacing: 0.05em;
+    text-transform: none;
+}
+.footer-about p {
+    color: var(--dark-text-muted);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Larger social icons */
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+    color: var(--color-white);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+/* Dark Mode for Social Links Hover - Use dark mode primary accent */
+.social-links a:hover {
+    background-color: var(--dark-primary); /* Gold accent on hover */
+    transform: translateY(-5px) scale(1.05);
+    color: var(--color-white);
+}
+
+.main-footer h3 {
+    color: var(--color-white); /* White headings in footer */
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.main-footer .footer-links ul li {
+    margin-bottom: 12px;
+}
+.main-footer .footer-links a,
+.main-footer .footer-contact p {
+    color: var(--dark-text-muted); /* Muted light text */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+/* Dark Mode for Footer Links/Contact Hover - Use dark mode primary accent */
+.main-footer .footer-links a:hover {
+    color: var(--dark-primary); /* Gold accent on hover */
+    transform: translateX(8px);
+    display: inline-block; /* Required for transform */
+}
+.main-footer .footer-contact p i {
+    margin-right: 10px;
+    color: var(--color-secondary); /* Secondary color for icons */
+    font-size: 1.1rem;
+}
+/* Dark Mode for Footer Contact Icons - Use dark mode primary accent */
+.main-footer .footer-contact p i {
+    color: var(--dark-primary); /* Gold for icons */
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+    margin-top: 40px;
+    text-align: center;
+    color: var(--dark-text-muted);
+}
+/* Dark Mode for Footer Bottom Border */
+body.dark-mode .footer-bottom {
+    border-top-color: var(--dark-border); /* Consistent dark border */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-section {
+        height: 80vh;
+    }
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+        text-align: center;
+    }
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+        text-align: center; /* Center content in stacked columns */
+    }
+    .social-links {
+        justify-content: center; /* Center social icons */
+    }
+    .main-footer .footer-links ul {
+        padding: 0;
+    }
+    .main-footer .footer-links ul li {
+        text-align: center;
+    }
+    .main-footer .footer-contact p {
+        justify-content: center; /* Center contact info icons/text */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .hero-actions .btn {
+        width: 90%; /* Make buttons wider */
+        max-width: 300px;
+    }
+    .sermon-highlight-card .sermon-info {
+        padding: 25px;
+    }
+    .sermon-highlight-card .sermon-info h3 {
+        font-size: 1.8rem;
+    }
+    .about-card, .ministry-card, .event-card, .contact-info-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+    .sermon-highlight-card .sermon-info .btn-link {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+    }
+    .sermon-thumbnail .play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .main-footer .footer-about .logo.footer-logo a {
+        font-size: 1.8rem;
+    }
+}

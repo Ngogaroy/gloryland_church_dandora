@@ -1,0 +1,340 @@
+/* css/events.css */
+
+/* Page Banner Section - Events Specific */
+.page-banner.events-banner {
+    background-image: url('../assets/images/events-banner.jpg'); /* Replace with your events banner image */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner .banner-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay for text readability */
+}
+
+.page-banner .banner-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Lora', serif;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.page-banner .banner-content p {
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: #e0e0e0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Events Intro Section */
+.events-intro {
+    background-color: var(--background-color);
+}
+
+.events-intro .section-title {
+    margin-bottom: 20px;
+}
+
+.events-intro .section-subtitle {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Event Grid Section */
+.event-grid-section {
+    background-color: var(--light-section-background); /* Or just var(--background-color) if no specific light section */
+    padding-top: 60px; /* Adjust padding to separate from intro */
+    padding-bottom: 60px;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid of cards */
+    gap: 40px;
+}
+
+/* Event Card Styles */
+.event-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: var(--shadow-medium); /* More pronounced shadow */
+}
+
+.event-card .card-header {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Fixed height for image container */
+    overflow: hidden;
+}
+
+.event-card .card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .card-header img {
+    transform: scale(1.05); /* Slight zoom on image on hover */
+}
+
+.event-card .event-date {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure it's above the image */
+}
+
+.event-card .event-date .day {
+    font-size: 0.9em;
+    display: block;
+    text-transform: uppercase;
+}
+
+.event-card .event-date .date {
+    font-size: 1.8em;
+    display: block;
+}
+
+.event-card .event-date .month {
+    font-size: 0.9em;
+    display: block;
+    text-transform: uppercase;
+}
+
+
+.event-card .card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content area to expand */
+}
+
+.event-card .card-content h4 {
+    font-size: 1.5em;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.event-card .event-meta {
+    font-size: 0.95em;
+    color: var(--text-color-light);
+    margin-bottom: 15px;
+    display: flex; /* Align icon and text */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px; /* Space between meta items */
+}
+
+.event-card .event-meta i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.event-card .card-content p {
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow description to fill space */
+}
+
+.event-card .btn-small {
+    padding: 10px 20px;
+    font-size: 0.95em;
+    align-self: flex-start; /* Aligns button to the left within flex container */
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+/* Event Call to Action (CTA) Section */
+.event-cta {
+    background-color: var(--primary-color); /* Use primary color for a strong call to action */
+    color: #fff; /* White text on primary background */
+    text-align: center;
+    padding: 80px 0;
+    /* Optional: Add a background image for this section */
+    /* background-image: url('../assets/images/cta-bg.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* position: relative; */
+}
+
+/* If you use a background image for CTA, add an overlay */
+/* .event-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--primary-color-rgb), 0.8);
+    z-index: 1;
+} */
+
+.event-cta .section-title {
+    color: #fff; /* Ensure title is white */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.event-cta .section-title::after {
+    background-color: rgba(255, 255, 255, 0.5); /* White underline for title */
+}
+
+.event-cta .section-subtitle {
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white subtitle */
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.event-cta .btn-secondary { /* Using a secondary button style for contrast */
+    background-color: var(--secondary-color); /* From global/main.css */
+    color: var(--button-text-color);
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.event-cta .btn-secondary:hover {
+    background-color: var(--secondary-dark-color); /* Darker secondary on hover */
+    border-color: var(--secondary-dark-color);
+}
+
+/* =======================================
+   Responsive Adjustments for Events Page
+   ======================================= */
+@media (max-width: 992px) {
+    .page-banner.events-banner {
+        height: 300px;
+    }
+
+    .page-banner .banner-content h1 {
+        font-size: 3em;
+    }
+
+    .page-banner .banner-content p {
+        font-size: 1.1em;
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .event-card .card-content {
+        padding: 20px;
+    }
+
+    .event-card .card-content h4 {
+        font-size: 1.3em;
+    }
+
+    .event-card .event-meta {
+        font-size: 0.9em;
+    }
+
+    .event-cta {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-banner.events-banner {
+        height: 250px;
+    }
+
+    .page-banner .banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .page-banner .banner-content p {
+        font-size: 1em;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        max-width: 400px; /* Constrain width of single column */
+        margin: 0 auto; /* Center the column */
+    }
+
+    .event-card .card-header {
+        height: 180px;
+    }
+
+    .event-card .card-content {
+        padding: 18px;
+    }
+
+    .events-intro, .event-cta {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-banner.events-banner {
+        height: 200px;
+    }
+
+    .page-banner .banner-content h1 {
+        font-size: 2em;
+    }
+
+    .page-banner .banner-content p {
+        font-size: 0.9em;
+    }
+
+    .event-card .event-date {
+        bottom: 10px;
+        left: 10px;
+        padding: 6px 12px;
+    }
+
+    .event-card .event-date .date {
+        font-size: 1.5em;
+    }
+
+    .event-card .card-content h4 {
+        font-size: 1.2em;
+    }
+
+    .event-card .card-content p {
+        font-size: 0.95em;
+    }
+
+    .events-intro, .event-grid-section, .event-cta {
+        padding: 40px 0;
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.37 16.46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3.64px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Hambergure_Menu" data-name="Hambergure Menu">
+      <line class="cls-1" x1="1.82" y1="1.82" x2="14.55" y2="1.82"/>
+      <line class="cls-1" x1="1.82" y1="8.23" x2="14.55" y2="8.23"/>
+      <line class="cls-1" x1="1.82" y1="14.64" x2="14.55" y2="14.64"/>
+    </g>
+  </g>
+</svg>

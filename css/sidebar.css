@@ -1,0 +1,342 @@
+/* css/sidebar.css */
+
+/* --- Sidebar Navigation Container (Mobile Default & General) --- */
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px; /* Wider for mobile readability */
+    height: 100vh; /* Crucial: Occupy full viewport height on mobile too */
+    background-color: rgba(36, 34, 58, 0.9);
+    box-shadow: var(--shadow-large);
+    transform: translateX(-100%); /* Initially hidden off-screen to the left */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.3s ease;
+    z-index: 1000;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack header and list vertically */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dark Mode Specifics for Sidebar Nav */
+body.dark-mode .sidebar-nav {
+    background-color: rgba(36, 34, 58, 0.9);
+}
+
+/* When sidebar is active (mobile view), show sidebar */
+.sidebar-nav.active {
+    transform: translateX(0);
+}
+
+
+/* --- Sidebar Header (Mobile & Desktop) --- */
+.sidebar-header {
+    display: flex;
+    /* On mobile, justify-content will be space-between or flex-end to separate logo and close button */
+    justify-content: space-between; /* <-- Change to space-between for mobile,
+                                        or flex-end if you only want the close button there */
+    align-items: center;
+    padding: 20px 20px; /* Adjust padding for mobile header for content inside */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+body.dark-mode .sidebar-header {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Sidebar Logo Styling (General/Mobile) --- */
+.sidebar-logo-link {
+    /* On mobile, we only want the close button visible in the header,
+       so the logo link is hidden by default. */
+    display: none; /* Keep hidden on mobile */
+    text-decoration: none;
+    color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-logo-img {
+    max-width: 100px; /* Max width for logo image on mobile */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Text-based logo styles (uncomment if using spans for text logo) */
+/*
+.logo-main-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: block;
+    line-height: 1.2;
+}
+.logo-sub-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-top: 2px;
+}
+*/
+
+/* --- Close Button --- */
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    border-radius: var(--border-radius-small);
+    display: block; /* Visible on mobile */
+}
+.close-sidebar:hover {
+    color: var(--color-accent);
+    transform: rotate(90deg);
+}
+
+
+/* --- Sidebar List (Navigation Items) --- */
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+.sidebar-list li {
+    margin-bottom: 5px;
+}
+.sidebar-list a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 5px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-medium);
+    margin: 0 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+.sidebar-list a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.sidebar-list a.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    box-shadow: var(--shadow-small);
+    transform: translateY(0);
+}
+body.dark-mode .sidebar-list a.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.sidebar-list a i {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+    min-width: unset;
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+.sidebar-list a.active i {
+    color: var(--color-white);
+}
+
+
+/* --- Sidebar Overlay (for mobile off-canvas) --- */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* --- Responsive Adjustments & Desktop Sidebar (Fixed Left Column) --- */
+@media (min-width: 993px) {
+    .sidebar-nav {
+        transform: translateX(0);
+        width: 80px;
+        height: 100vh;
+        background-color: rgba(36, 34, 58, 0.8);
+        box-shadow: var(--shadow-small);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.3s ease;
+    }
+
+    /* Adjust sidebar-header for desktop: primarily to show the logo */
+    .sidebar-header {
+        display: flex;
+        justify-content: center; /* <-- Keep this for horizontal centering on desktop */
+        align-items: center;
+        padding: 0;
+        min-height: var(--header-height);
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    /* Show the logo on desktop and style it for the compact sidebar */
+    .sidebar-logo-link {
+        display: flex; /* <-- Ensure this is 'flex' to make it visible */
+        width: 100%;
+        height: 100%;
+        padding: 10px 0;
+    }
+
+    .sidebar-logo-img {
+        max-width: 50px;
+    }
+
+    /* Hide the close button on desktop */
+    .close-sidebar {
+        display: none;
+    }
+
+    /* Text-based logo for desktop (uncomment if using spans for text logo) */
+    /*
+    .logo-main-text {
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+    .logo-sub-text {
+        display: none; // Hide subtitle on compact desktop
+    }
+    */
+
+    /* Sidebar overlay is hidden on desktop */
+    .sidebar-overlay {
+        display: none;
+    }
+
+    /* Adjust padding for the list to push content below the logo in the header */
+    .sidebar-list {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        flex-grow: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .sidebar-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sidebar-list li {
+        margin-bottom: 10px;
+    }
+    .sidebar-list a {
+        padding: 10px 0;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    .sidebar-list a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: none;
+        color: var(--color-accent);
+    }
+
+    .sidebar-list a i {
+        font-size: 1.6rem;
+    }
+    .sidebar-list a span {
+        font-size: 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        max-width: 60px;
+    }
+
+    body.no-scroll {
+        overflow: auto;
+    }
+
+    .sidebar-nav.hide-on-footer {
+        transform: translateX(-100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+/* --- Mobile-Specific Overrides (max-width: 992px) --- */
+@media (max-width: 992px) {
+    .sidebar-header {
+        display: flex;
+        justify-content: flex-end; /* Ensure close button is at the end on mobile */
+        /* If you want the logo visible on mobile, you'd change this and sidebar-logo-link's display */
+    }
+    .sidebar-logo-link {
+        display: none; /* Keep hidden on mobile */
+    }
+    .close-sidebar {
+        display: block; /* Ensure close button is visible */
+    }
+
+    .sidebar-list a {
+        flex-direction: row;
+        padding: 15px 25px;
+        margin: 0 15px;
+        font-size: 1.1rem;
+        border-radius: var(--border-radius-medium);
+        text-align: left;
+    }
+    .sidebar-list a i {
+        margin-right: 15px;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+    }
+    .sidebar-list a span {
+        max-width: none;
+        white-space: normal;
+        text-overflow: clip;
+    }
+    .sidebar-list a:hover {
+        transform: translateX(5px);
+    }
+
+    .sidebar-nav.hide-on-footer {
+        transform: translateX(-100%) !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
