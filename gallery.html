@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Gloryland Church Dandora Assembly</title>
+    <meta name="description" content="Explore the visual history of Gloryland Church Dandora Assembly through photos. View images of our church events, community outreach, and milestones over the years.">
+    <meta name="keywords" content="church gallery, Gloryland Church photos, Dandora church history, church events pictures, community outreach photos, church building images, Nairobi church memories">
+    <meta name="author" content="Gloryland Church Dandora Assembly">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/gallery.css"> </head>
+<body class="light-mode">
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="sidebar-placeholder"></div>
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true" tabindex="-1"></div>
+
+    <div class="page-layout-wrapper">
+        <div id="header-placeholder"></div>
+
+        <main>
+            <section class="page-banner gallery-banner">
+                <div class="banner-overlay"></div>
+                <div class="banner-content container">
+                    <h1>Our Photo Gallery</h1>
+                    <p>Relive moments and explore the visual journey of Gloryland Church.</p>
+                </div>
+            </section>
+
+            <section class="gallery-intro section-padding">
+                <div class="container text-center">
+                    <h3 class="section-title">A Glimpse into Our History and Moments</h3>
+                    <p class="section-subtitle">
+                        From our humble beginnings to vibrant community events and powerful worship services, this gallery captures the spirit and growth of Gloryland Church Dandora Assembly. Browse through our cherished memories.
+                    </p>
+                </div>
+            </section>
+
+            <section class="gallery-grid-section section-padding bg-light">
+                <div class="container">
+                    <div class="gallery-filters">
+                        <select id="filterCategory" aria-label="Filter by Category">
+                            <option value="all">All Photos</option>
+                            <option value="history">Church History</option>
+                            <option value="events">Events & Fellowship</option>
+                            <option value="outreach">Community Outreach</option>
+                            <option value="worship">Worship Services</option>
+                        </select>
+                        <select id="filterYear" aria-label="Filter by Year">
+                            <option value="all">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="older">Older</option>
+                        </select>
+                    </div>
+
+                    <div class="gallery-grid">
+                        </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary" id="loadMoreGallery">Load More Photos</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <button id="scrollToTopBtn" title="Go to top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZQL/OvFXpDShxBU0S8asx6hPmz6MX/ltsJk/fvkoSRpYLXilzlmDanwSs0hVwaQQm5xLg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/gallery.js"></script> </body>
+</html>
