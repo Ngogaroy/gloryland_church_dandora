@@ -2,7 +2,7 @@
 
 /* Page Banner Section - Give Specific */
 .page-banner.give-banner {
-    background-image: url('../assets/images/give-banner.jpg'); /* Replace with your giving banner image */
+    background-image: url('../assets/images/hero-image 4.jpg'); /* Replace with your giving banner image */
     background-size: cover;
     background-position: center;
     height: 400px; /* Adjust height as needed */
@@ -78,10 +78,6 @@
     justify-content: space-between; /* Pushes content apart, useful for button at bottom */
 }
 
-.method-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-}
 
 .method-card .card-icon {
     font-size: 3.5em;
@@ -142,12 +138,29 @@
     margin-top: 10px;
 }
 
-/* Specific button styling for these cards */
+/* Specific button styling for online giving card */
 .method-card .btn-small {
     margin-top: auto; /* Pushes button to bottom of card */
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: 2px solid var(--border-color);
+    transition: background-color 0.5s ease, border-color 0.3s ease;
+
+}
+.method-card .btn-small:hover {
+    background-color: var(--dark-secondary);
+    color: var(--color-white);
 }
 
-
+/* Dark mode for give online CTA*/
+body.dark-mode .method-card .btn-small {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+body.dark-mode .method-card .btn-small:hover {
+    background-color: var(--dark-secondary);
+    color: var(--color-white);
+}
 /* Questions CTA Section */
 .questions-cta {
     background-color: var(--primary-color); /* Strong background color */
@@ -155,22 +168,11 @@
     text-align: center;
     padding: 80px 0;
     position: relative;
-    /* Optional: Add a background image for this section with an overlay if needed */
-    /* background-image: url('../assets/images/cta-questions.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* If using image, add an overlay like:
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-color: rgba(var(--primary-color-rgb), 0.85);
-        z-index: 1;
-    } */
+  
 }
 
 .questions-cta .section-title {
-    color: #fff;
+    color: var(--color-primary);
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -181,27 +183,36 @@
 }
 
 .questions-cta .section-subtitle {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-black);
     max-width: 800px;
     margin: 0 auto 40px auto;
     position: relative;
     z-index: 2;
 }
 
-.questions-cta .btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--button-text-color);
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
     border: 2px solid var(--secondary-color);
     position: relative;
     z-index: 2;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.5s ease, border-color 0.3s ease;
 }
 
 .questions-cta .btn-secondary:hover {
-    background-color: var(--secondary-dark-color);
+    background-color: var(--dark-secondary);
     border-color: var(--secondary-dark-color);
+    color: var(--color-white);
 }
 
+/*Dark Mode for giving CTA*/
+body.dark-mode .questions-cta .btn-secondary{
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+body.dark-mode .questions-cta .btn-secondary:hover{
+    background-color: var(--dark-secondary);
+}
 
 /* =======================================
    Responsive Adjustments for Give Page

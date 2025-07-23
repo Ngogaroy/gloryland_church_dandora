@@ -429,19 +429,20 @@ body.dark-mode .text-dark {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-secondary); /* Light mode primary button hover */
-    border-color: var(--color-secondary);
+    background-color: var(--color-primary); /* Light mode primary button hover */
+    border-color: var(--color-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-small);
+    color: var(--color-white);
 }
 
 body.dark-mode .btn-primary {
     background-color: var(--dark-primary); /* Dark mode primary button */
     border-color: var(--dark-primary);
-    color: var(--color-white); /* Keep white text for dark primary, assuming sufficient contrast */
+    color: var(--color-black); /* Keep white text for dark primary, assuming sufficient contrast */
 }
 body.dark-mode .btn-primary:hover {
-    background-color: var(--dark-accent); /* Dark mode primary button hover */
+    background-color: var(--dark-secondary); /* Dark mode primary button hover */
     border-color: var(--dark-accent);
 }
 
@@ -462,7 +463,7 @@ body.dark-mode .btn-secondary {
     border-color: var(--dark-primary);
 }
 body.dark-mode .btn-secondary:hover {
-    background-color: var(--dark-primary); /* Dark mode secondary button hover */
+    background-color: var(--dark-secondary); /* Dark mode secondary button hover */
     color: var(--color-white);
     border-color: var(--dark-primary);
 }
@@ -479,6 +480,7 @@ body.dark-mode .btn-secondary:hover {
     border-color: var(--color-church-gold-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-small);
+    color: var(--color-black);
 }
 
 body.dark-mode .btn-tertiary {

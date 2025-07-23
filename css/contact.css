@@ -14,7 +14,7 @@
     background-size: cover;
     background-position: center;
     /* IMPORTANT: Replace with a relevant image for your Contact Us page */
-    background-image: url('../assets/images/contact-banner.jpg'); /* Example path */
+    background-image: url('../assets/images/hero-image 3.jpg'); /* Example path */
 }
 
 .page-banner.contact-banner {
@@ -197,8 +197,8 @@
     padding: 15px 30px;
     font-size: 1.1em;
     border-radius: 6px;
-    background-color: var(--primary-color);
-    color: var(--button-text-color);
+    background-color: var(--color-primary);
+    color: var(--color-white);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -206,8 +206,17 @@
 }
 
 .contact-form .btn-primary:hover {
-    background-color: var(--primary-dark-color);
+    background-color: var(--color-secondary);
     transform: translateY(-2px);
+}
+/*Dark mode for contact CTA*/
+body.dark-mode .contact-form .btn-primary{
+    background-color: var(--color-accent);
+    color: var(--color-black);
+}
+body.dark-mode .contact-form .btn-primary:hover{
+    background-color: var(--dark-secondary);
+    color: var(--color-white);
 }
 
 /* Message display area for form submission feedback */

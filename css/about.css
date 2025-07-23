@@ -4,16 +4,16 @@
 /* Styles for the introductory banner at the top of the About Us page */
 .page-banner {
     position: relative;
-    height: 300px; /* Adjust height as needed for visual impact */
+    height: 400px; /* Adjust height as needed for visual impact */
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff; /* Text color for content over the banner */
     text-align: center;
     overflow: hidden;
-    background-image: url('../assets/images/about-banner.jpg'); /* **IMPORTANT: Replace with your actual banner image path** */
+    background-image: url('../assets/GLC_Gallery/Ministries_barner.jpg'); /* **IMPORTANT: Replace with your actual banner image path** */
     background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center center; /* Centers the image */
+    background-position:calc(top -60%) center; /* Centers the image */
     background-attachment: scroll; /* Use 'fixed' for a parallax effect if desired, 'scroll' for static */
 }
 
@@ -266,15 +266,21 @@ body.dark-mode .member-social a:hover {
 .call-to-action-bottom h3 {
     font-size: 2.2em;
     margin-bottom: 15px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .call-to-action-bottom p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    color: #f0f0f0;
+    color: #ffffff;
 }
 
+body.dark-mode .call-to-action-bottom h3 {
+    color: #000000;
+}
+body.dark-mode .call-to-action-bottom p {
+    color: #000000;
+}
 /* --- Responsive adjustments for About page --- */
 @media (max-width: 992px) {
     .our-story .content-left-image {
