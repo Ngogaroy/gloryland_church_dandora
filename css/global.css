@@ -1,4 +1,4 @@
-/* css/global.css - REVISED WITH FULL CHURCH COLOR PALETTE & DARK MODE INTEGRATION (Readability Fixes) */
+/* FULL CHURCH COLOR PALETTE & DARK MODE INTEGRATION */
 
 /* --- Root Variables for Theming --- */
 :root {
@@ -285,8 +285,9 @@ ul {
     transition: background-color 0.3s ease;
 }
 
+
 body.dark-mode .page-layout-wrapper {
-   background-color: var(--color-dark-purple) /* DO NOT set background-color here for dark mode, it's on the body */
+   background-color: var(--color-dark-purple) 
 }
 
 
@@ -618,6 +619,65 @@ a.active:not(.btn):not(.social-links a) {
 body.dark-mode a.active:not(.btn):not(.social-links a) {
     color: var(--dark-primary); /* Dark mode active link */
 }
+
+
+/* --- Scrollbar Styles --- */
+
+/* For Webkit browsers (Chrome, Safari, newer Opera, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+    background-color: var(--color-background-light); /* Light background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary); /* Your primary brand color */
+    border-radius: 5px; /* Rounded corners for the thumb */
+    border: 2px solid var(--color-background-light); /* Adds a border to separate from track */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary-dark); /* Slightly darker shade on hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--color-accent); /* An accent color for active state */
+}
+
+/* Optional: Hide scrollbar buttons */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* --- Dark Mode Adaptation --- */
+body.dark-mode ::-webkit-scrollbar {
+    background-color: var(--color-background-dark); /* Dark background for the track in dark mode */
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent); /* Use accent or a complementary color for dark mode thumb */
+    border-color: var(--color-background-dark);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent-dark); /* Darker accent on hover */
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:active {
+    background-color: var(--color-primary); /* Primary color for active state in dark mode */
+}
+
+/* --- Fallback for Firefox --- */
+html {
+    scrollbar-color: var(--color-primary) var(--color-background-light); /* thumb-color track-color */
+    scrollbar-width: thin; /* 'auto' | 'thin' | 'none' */
+}
+
+body.dark-mode html {
+    scrollbar-color: var(--color-accent) var(--color-background-dark);
+}
+
 
 /* ------------------------------------------------------------- */
 /* --- Footer Styles (Colors updated) --- */

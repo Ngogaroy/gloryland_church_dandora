@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.getElementById('loadMoreGallery');
 
     // --- Gallery Data ---
-    // IMPORTANT: Replace the 'thumbSrc' and 'fullSrc' paths with your actual image paths.
-    // Ensure you have an 'assets/images/gallery/' folder with your images.
     // Each item should have a thumbnail (for the grid) and a full-size image (for the lightbox).
     const galleryItemsData = [
         {

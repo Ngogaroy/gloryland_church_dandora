@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.innerHTML = html;
             }
         } catch (error) {
-            console.error(`Could not load partial ${url}:`, error);
+            console.error(`Could not load components ${url}:`, error);
         }
     }
 

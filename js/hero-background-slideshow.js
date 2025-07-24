@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'assets/images/hero-image 2.jpg',
         'assets/videos/Hero-video 2.mp4',
         'assets/images/hero-image 4.jpg',
-        'assets/videos/hero-video 3.mp4', // Assuming this is a video and moved to videos folder
+        'assets/videos/hero-video 3.mp4',
         'assets/images/hero-image 3.jpg',
-        'assets/videos/hero-video 4.mp4', // Assuming this is a video and moved to videos folder
+        'assets/videos/hero-video 4.mp4',
         'assets/images/hero-image.jpg',
-        'assets/videos/hero-image 1.mp4' // Assuming this is a video and moved to videos folder
+        'assets/videos/hero-image 1.mp4' 
     ];
 
     let currentMediaIndex = 0;
